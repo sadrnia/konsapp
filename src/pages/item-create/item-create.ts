@@ -24,11 +24,11 @@ export class ItemCreatePage {
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
     this.form = formBuilder.group({
       profilePic: ['', Validators.required],
-      name: ['', Validators.required],
-      lastname: ['', Validators.required],
-      title: ['', Validators.required],
+      name: [''],
+      lastname: [''],
+      title: [''],
       about: [''],
-      birthay: ['', Validators.required]
+      birthay: ['']
     });
 
     // Watch the form for changes, and
@@ -40,6 +40,7 @@ export class ItemCreatePage {
 
   ionViewDidLoad() {
   }
+
 
 
   getPicture() {

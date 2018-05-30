@@ -8,4 +8,14 @@ page-login {
   .login{
     border-radius: 10px;
   }
+  .input-login{
+    background-color: #f6f6f6;
+    border-radius: 7px;
+    height: 40px;
+    padding-left: 10px;
+  }
+  .label-login {
+    padding-left: 10px;
+    color: darkgray;
+  }
 }
