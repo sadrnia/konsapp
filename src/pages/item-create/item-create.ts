@@ -2,13 +2,18 @@ import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
 import { IonicPage, NavController, ViewController } from 'ionic-angular';
+import { ExperienceComponent } from "../../components/experience/experience";
 
 @IonicPage()
 @Component({
   selector: 'page-item-create',
   templateUrl: 'item-create.html'
+
 })
+
+
 export class ItemCreatePage {
+
   @ViewChild('fileInput') fileInput;
 
   isReadyToSave: boolean;
@@ -19,9 +24,12 @@ export class ItemCreatePage {
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
     this.form = formBuilder.group({
-      profilePic: [''],
+      profilePic: ['', Validators.required],
       name: ['', Validators.required],
-      about: ['']
+      lastname: ['', Validators.required],
+      title: ['', Validators.required],
+      about: [''],
+      birthay: ['', Validators.required]
     });
 
     // Watch the form for changes, and
@@ -30,9 +38,10 @@ export class ItemCreatePage {
     });
   }
 
-  ionViewDidLoad() {
 
+  ionViewDidLoad() {
   }
+
 
   getPicture() {
     if (Camera['installed']()) {

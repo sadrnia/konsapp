@@ -1,18 +1,23 @@
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>{{ item.name }}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content class="bg-style">
+  <ion-card class="profile-card">
+    <ion-list color="#888">
+      <ion-item>
+          <img item-start  class="item-profile" text-center #profilePic [style.background-image]="'url(' + item.profilePic + ')'">
+        <h2>{{item.name}}&nbsp;{{item.lastname}}</h2>
+        <p>{{item.title}}</p>
+      </ion-item>
+      <p class="text-profile">{{item.about}}</p>
+    </ion-list>
+  </ion-card>
 
-<ion-content>
-  <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + item.profilePic + ')'">
-  </div>
-
+  <ion-card class="ion-card">
   <div class="item-detail" padding>
-    <h2>{{item.name}}</h2>
-    <p>{{item.about}}</p>
   </div>
+  </ion-card>
 </ion-content>

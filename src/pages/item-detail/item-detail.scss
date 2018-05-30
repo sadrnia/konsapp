@@ -1,14 +1,20 @@
 page-item-detail {
-  .item-profile {
-    width: 100%;
-    background-position: center center;
-    background-size: cover;
-    height: 250px;
+  .bg-style {
+    background: #dfe4ea;
   }
 
-  .item-detail {
-    width: 100%;
-    background: white;
-    position: absolute;
+  .item-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
+
+  .profile-card {
+    border-radius: 10px;
+  }
+
+  .text-profile{
+    padding-left: 10px;
+  }
+
 }
