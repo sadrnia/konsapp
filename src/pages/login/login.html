@@ -11,10 +11,10 @@
   <form (submit)="doLogin()">
     <ion-card class="ion-card">
       <ion-list>
-          <ion-item>
-            <ion-label class="label-login" floating>{{ 'EMAIL' | translate }}</ion-label>
-            <ion-input class="input-login" type="email" [(ngModel)]="account.email" name="email"></ion-input>
-          </ion-item>
+        <ion-item>
+          <ion-label class="label-login" floating>{{ 'EMAIL' | translate }}</ion-label>
+          <ion-input class="input-login" type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        </ion-item>
 
         <!--
         Want to use a Username instead of an Email? Here you go:
@@ -32,7 +32,7 @@
         </ion-item>
 
         <div padding>
-          <button class="login" ion-button color="secondary"  large full >{{ 'LOGIN_BUTTON' | translate }}</button>
+          <button class="login" ion-button color="secondary"  large >{{ 'LOGIN_BUTTON' | translate }}</button>
         </div>
       </ion-list>
     </ion-card>

@@ -2,6 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
 import { IonicPage, NavController, ViewController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
+
+
+
 
 @IonicPage()
 @Component({
@@ -21,15 +25,18 @@ export class ItemCreatePage {
 
   form: FormGroup;
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera, public alerCtrl: AlertController) {
     this.form = formBuilder.group({
       profilePic: ['', Validators.required],
-      name: [''],
-      lastname: [''],
-      title: [''],
-      about: [''],
-      birthay: ['']
+      name: ['', Validators.required],
+      lastname: ['', Validators.required],
+      title: ['', Validators.required],
+      about: ['', Validators.required],
+      birthay: [''],
+      email: ['', Validators.required],
+      mobile: ['', Validators.required]
     });
+
 
     // Watch the form for changes, and
     this.form.valueChanges.subscribe((v) => {
@@ -39,8 +46,8 @@ export class ItemCreatePage {
 
 
   ionViewDidLoad() {
-  }
 
+  }
 
 
   getPicture() {
@@ -88,5 +95,14 @@ export class ItemCreatePage {
   done() {
     if (!this.form.valid) { return; }
     this.viewCtrl.dismiss(this.form.value);
+  }
+
+  doAlert() {
+    let alert = this.alerCtrl.create({
+      title: 'New Friend!',
+      message: 'Your friend, Obi wan Kenobi, just approved your friend request!',
+      buttons: ['Ok']
+    });
+    alert.present()
   }
 }

@@ -62,15 +62,11 @@
               -->
               <ion-item>
                 <ion-label class="label-cv" floating>Email</ion-label>
-                <ion-input class="input-cv" type="text"  formControlName="about"></ion-input>
+                <ion-input class="input-cv" type="text"  formControlName="email"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label class="label-cv" floating>Phone</ion-label>
-                <ion-input class="input-cv" type="text"  formControlName="about"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label class="label-cv" floating>Mobil</ion-label>
-                <ion-input class="input-cv" type="text"  formControlName="about"></ion-input>
+                <ion-label class="label-cv" floating>Mobile</ion-label>
+                <ion-input class="input-cv" type="text"  formControlName="mobile"></ion-input>
               </ion-item>
               <ion-grid>
                 <ion-row>
@@ -94,13 +90,17 @@
         <ion-card class="card-cv">
           <ion-list>
             <ion-item-group>
-              <ion-item-divider color="secondary">Experience</ion-item-divider>
+              <ion-item-divider color="secondary">Work Experience</ion-item-divider>
               <ion-item>
                 <ion-label class="label-cv" color="secondary" floating>Company name</ion-label>
                 <ion-input type="text" class="input-cv" formControlName="name"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label class="label-cv" floating>Position</ion-label>
+                <ion-label class="label-cv" floating>Title</ion-label>
+                <ion-input type="text" class="input-cv" formControlName="name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="label-cv" floating>Location</ion-label>
                 <ion-input type="text" class="input-cv" formControlName="name"></ion-input>
               </ion-item>
               <ion-item>
@@ -112,12 +112,12 @@
                 <ion-datetime class="input-cv" displayFormat="MMM YYYY"></ion-datetime>
               </ion-item>
               <ion-item>
-                <ion-label class="label-cv" floating>{{ 'ITEM_ABOUT_PLACEHOLDER' | translate }}</ion-label>
-                <ion-textarea type="text" class="input-cv" formControlName="about"></ion-textarea>
+                <ion-label>I currently work here.</ion-label>
+                <ion-checkbox color="secondary" checked="false"></ion-checkbox>
               </ion-item>
               <ion-item>
-                <ion-label class="label-cv" floating>Technologies</ion-label>
-                <ion-input type="text" class="input-cv" formControlName="name"></ion-input>
+                <ion-label class="label-cv" floating>{{ 'ITEM_ABOUT_PLACEHOLDER' | translate }}</ion-label>
+                <ion-textarea type="text" class="input-cv" formControlName="about"></ion-textarea>
               </ion-item>
               <ion-grid>
                 <ion-row>
@@ -155,13 +155,17 @@
             <ion-item-group>
               <ion-item-divider color="secondary">Education & Courses</ion-item-divider>
             <ion-item>
-              <ion-label class="label-cv" floating>Name</ion-label>
+              <ion-label class="label-cv" floating>School</ion-label>
               <ion-input class="input-cv" type="text"  formControlName="name"></ion-input>
             </ion-item>
-            <ion-item>
-              <ion-label class="label-cv" floating>where</ion-label>
-              <ion-input class="input-cv" type="text"  formControlName="name"></ion-input>
-            </ion-item>
+              <ion-item>
+                <ion-label class="label-cv" floating>Degree</ion-label>
+                <ion-input class="input-cv" type="text"  formControlName="name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="label-cv" floating>Grade</ion-label>
+                <ion-input class="input-cv" type="text"  formControlName="name"></ion-input>
+              </ion-item>
             <ion-item>
               <ion-label class="label-cv">Start Date</ion-label>
               <ion-datetime class="input-cv" displayFormat="MMM YYYY"></ion-datetime>
@@ -197,6 +201,38 @@
           Add
         </button>
       </ion-slide>
+
+
+      <!------------------------------  Skills  ------------------------------>
+      <ion-slide>
+        <ion-card class="card-cv">
+          <ion-list>
+            <ion-item-group>
+              <ion-item-divider color="secondary">
+                Skills
+                <button ion-button item-end color="secondary" (click)="doAlert()">
+                  <ion-icon name="help-circle"></ion-icon>
+                </button>
+              </ion-item-divider>
+              <ion-item>
+                <ion-label class="label-cv" floating>School</ion-label>
+                <ion-input class="input-cv" type="text"  formControlName="name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-range min="1000" max="2000" step="100" snaps="true"  color="secondary">
+                  <ion-icon range-left small color="secondary" name="battery-dead"></ion-icon>
+                  <ion-icon range-right color="secondary" name="battery-full"></ion-icon>
+                </ion-range>
+              </ion-item>
+            </ion-item-group>
+          </ion-list>
+        </ion-card>
+        <button class="btn-cv" ion-button color="secondary">
+          <ion-icon name="add"></ion-icon>
+          Add
+        </button>
+      </ion-slide>
+
       <!------------------------------  Conferences  ------------------------------>
       <ion-slide>
         <ion-card class="card-cv">
@@ -260,6 +296,29 @@
             </ion-grid>
           </ion-list>
         </ion-card>
+      </ion-slide>
+      <!------------------------------  New  Position  ------------------------------>
+      <ion-slide>
+        <ion-card class="card-cv">
+          <ion-list>
+            <ion-item-group>
+              <ion-item-divider color="secondary">New  Position</ion-item-divider>
+              <ion-item>
+                <ion-label>Available for a new  position</ion-label>
+                <ion-toggle color="secondary" checked="true"></ion-toggle>
+              </ion-item>
+              <ion-item>
+                <ion-label class="label-cv">Available from</ion-label>
+                <ion-datetime class="input-cv" displayFormat="MMM DD YYYY"></ion-datetime>
+              </ion-item>
+
+            </ion-item-group>
+          </ion-list>
+        </ion-card>
+        <button class="btn-cv" ion-button color="secondary">
+          <ion-icon name="add"></ion-icon>
+          Add
+        </button>
       </ion-slide>
     </ion-slides>
   </form>
